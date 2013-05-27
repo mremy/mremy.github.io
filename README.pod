@@ -1,0 +1,17 @@
+=pod
+
+=head1 TIPS
+
+=head4 No sound after Debian install (Wheezy on a Thinkpad X31)
+
+It's a minmal install, with xorg-server, xdm and awesome.
+All seems to be okay (/proc/asound/cards, kernel modules, irq, etc.)
+
+The solution was to initialize alsa:
+
+# alsactl init 0
+
+As the sound card had id 0 (cat /proc/asound/cards). Sound was then ther.
+
+
+=cut
